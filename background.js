@@ -26,8 +26,8 @@ chrome.windows.onCreated.addListener(async (window) => {
     return
   }
 
-  if (tabs.length === 1 && tabs[0].pendingUrl?.includes("youtube.com")) {
-    console.log("YouTube opened, closing empty windows...")
+  if (tabs.length === 1) {
+    console.log("PWA opened, closing empty windows...")
     for (let winId of emptyWindows) {
       chrome.windows.remove(winId)
     }
