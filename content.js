@@ -20,6 +20,12 @@
       manifestData.start_url = absoluteURL(manifestData.start_url)
     if (manifestData.scope) manifestData.scope = absoluteURL(manifestData.scope)
 
+    if (manifestData.icons && Array.isArray(manifestData.icons)) {
+      manifestData.icons.forEach((icon) => {
+        if (icon.src) icon.src = absoluteURL(icon.src)
+      })
+    }
+
     if (manifestData.shortcuts && Array.isArray(manifestData.shortcuts)) {
       manifestData.shortcuts.forEach((shortcut) => {
         if (shortcut.url) shortcut.url = absoluteURL(shortcut.url)
