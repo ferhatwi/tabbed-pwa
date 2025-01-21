@@ -4,13 +4,19 @@
   "manifest_version": 3,
   "description": "Overrides PWA manifest to enable tabbed mode.",
   "permissions": ["scripting", "activeTab"],
-  "host_permissions": ["https://www.youtube.com/*", "https://add.your.sites/*"],
+  "host_permissions": [
+    "https://www.youtube.com/*",
+    "https://*.translate.google.com/*"
+  ],
   "background": {
     "service_worker": "background.js"
   },
   "content_scripts": [
     {
-      "matches": ["https://www.youtube.com/*", "https://add.your.sites/*"],
+      "matches": [
+        "https://www.youtube.com/*",
+        "https://*.translate.google.com/*"
+      ],
       "js": ["content.js"],
       "run_at": "document_idle"
     }

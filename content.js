@@ -27,7 +27,7 @@
     }
 
     manifestData.display_override = ["tabbed"]
-    manifestData.launch_handler = { client_mode: ["focus-existing"] }
+    manifestData.launch_handler = { client_mode: ["navigate-new"] }
 
     let modifiedManifestBlob = new Blob(
       [JSON.stringify(manifestData, null, 2)],
